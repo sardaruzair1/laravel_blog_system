@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Route::view('/theme', 'layouts.auth');
 
-Route::view('/test', 'layouts.test');
+Route::view('/test', 'layouts.tst');
 
 Auth::routes();
 
