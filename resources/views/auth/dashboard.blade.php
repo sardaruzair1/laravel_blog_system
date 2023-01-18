@@ -80,9 +80,12 @@
                     <span class="nav-text">Account Setting</span>
                   </a>
                 </li>
-
+{{-- lgg --}}
                 <li class="dropdown-footer">
-                  <a class="dropdown-link-item" href="sign-in.html"> <i class="mdi mdi-logout"></i> Log Out </a>
+                  <form id="logout-form" action="{{ route('logout') }}" method="post">
+                    @csrf
+                    <a id="logout-button" class="dropdown-link-item" href="javascript:void(0)"> <i class="mdi mdi-logout"></i> Log Out </a>
+                  </form>
                 </li>
               </ul>
             </li>
@@ -222,4 +225,11 @@
 @section('scripts')
 <script src="{{ asset('assets/auth/plugins/apexcharts/apexcharts.js') }}"></script>
 <script src="{{ asset('assets/auth/js/chart.js') }}"></script>
+<script>
+  $(document).ready(function(){
+    $('#logout-button').click(function() {
+      $('#logout-form').submit();
+    });
+  });
+</script>
 @endsection
