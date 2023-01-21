@@ -10,6 +10,7 @@ Route::get('/logout', function () {
 });
 Route::view('/', 'welcome');
 Route::view('/theme', 'auth.dashboard');
+Route::view('/tst', 'tst');
 
 
 Auth::routes([
